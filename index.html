@@ -19,6 +19,13 @@
 .breaking-track{display:flex;width:max-content;animation:marquee 12s linear infinite}.breaking-scroll{white-space:nowrap;font-weight:900;font-size:13px;padding-right:50px}.breaking-label{background:#00C7B7;color:#000;padding:4px 10px;border-radius:20px;margin-right:10px}
 .oops-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:99999;display:flex;align-items:center;justify-content:center;padding:12px}
 .admin-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:20010;display:none;align-items:center;justify-content:center;padding:12px}.admin-overlay.show{display:flex}.admin-box{width:100%;max-width:440px;background:#000;border:3px solid #FFD700;border-radius:16px;padding:16px;max-height:92vh;overflow-y:auto}
+/* ✅ WELCOME ADDRESS ANIMATE — WHITE LETTER KEEP — ADDED */
+@keyframes welcomeGlow{0%{text-shadow:0 0 5px #FFF,0 0 10px #FFD700;transform:scale(1)}50%{text-shadow:0 0 15px #FFF,0 0 25px #FFD700,0 0 35px #00E5D6;transform:scale(1.03)}100%{text-shadow:0 0 5px #FFF,0 0 10px #FFD700;transform:scale(1)}}
+@keyframes wogaSlide{0%{transform:translateX(-10px)}50%{transform:translateX(10px)}100%{transform:translateX(-10px)}}
+@keyframes kenteShimmer{0%{filter:brightness(1)}50%{filter:brightness(1.4)}100%{filter:brightness(1)}}
+.welcome-animate{animation:welcomeGlow 2.6s ease-in-out infinite;color:#FFFFFF !important;-webkit-text-fill-color:#FFFFFF !important;display:block}
+.woga-animate{animation:wogaSlide 3s ease-in-out infinite;display:inline-block;color:#000 !important;background:#FFF !important}
+.kente-animate{animation:kenteShimmer 2s ease-in-out infinite}
 </style></head>
 <body data-version="v4.6.5.3-NYAGBO-PEOPLE-FIXED">
 
@@ -42,17 +49,17 @@
 
 <div id="head">
 
-<!-- ✅ FINAL FIXED — WHITE LETTER — KENTE DESIGN — YOUR EXACT TEXT — SIMPLE NAVIGATION -->
+<!-- ✅ FINAL FIXED — WHITE LETTER — KENTE DESIGN — ANIMATED — YOUR EXACT TEXT -->
 <div id="welcomeKenteWhite" style="width:100%;background:#000;border:3px solid #FFD700;border-radius:18px;overflow:hidden;margin:0 0 14px 0;box-shadow:0 0 18px rgba(255,215,0,0.25)">
-  <div style="width:100%;height:24px;background:repeating-linear-gradient(90deg,#FFD700 0 14px,#C00000 14px 28px,#008000 28px 42px,#000 42px 56px)"></div>
+  <div class="kente-animate" style="width:100%;height:24px;background:repeating-linear-gradient(90deg,#FFD700 0 14px,#C00000 14px 28px,#008000 28px 42px,#000 42px 56px)"></div>
   <div style="background:#000;text-align:center;padding:5px 0;font-size:11px;letter-spacing:5px;border-bottom:1px solid #222">🎉 🚩 🟡 🔴 🟢 🚩 🎊</div>
   <div style="background:#000;padding:16px 10px;text-align:center">
-    <div style="color:#FFFFFF;font-weight:900;font-size:22px;letter-spacing:1px">ETINƐ AI LAB</div>
-    <div style="color:#FFFFFF;font-weight:900;font-size:19px;margin:10px 0 6px 0;line-height:1.25">Welcomes You To Batugbuitsalɛ</div>
-    <div style="color:#FFFFFF;font-weight:700;font-size:12px;line-height:1.4;opacity:0.95">The Cultural Heritage Of The Nyagbo People</div>
-    <div style="margin-top:10px"><span style="background:#FFFFFF;color:#000;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px">Wɔgã o • NYAGBO • GHANA 🇬🇭</span></div>
+    <div class="welcome-animate" style="color:#FFFFFF;font-weight:900;font-size:22px;letter-spacing:1px">ETINƐ AI LAB</div>
+    <div class="welcome-animate" style="color:#FFFFFF;font-weight:900;font-size:19px;margin:10px 0 6px 0;line-height:1.25;animation-delay:0.3s">Welcomes You To Batugbuitsalɛ</div>
+    <div class="welcome-animate" style="color:#FFFFFF;font-weight:700;font-size:12px;line-height:1.4;opacity:0.95;animation-delay:0.6s">The Cultural Heritage Of The Nyagbo People</div>
+    <div style="margin-top:10px"><span class="woga-animate" style="background:#FFFFFF;color:#000;font-size:9px;font-weight:900;padding:4px 10px;border-radius:20px">Wɔgã o • NYAGBO • GHANA 🇬🇭</span></div>
   </div>
-  <div style="width:100%;height:24px;background:repeating-linear-gradient(90deg,#000 0 14px,#008000 14px 28px,#FFD700 28px 42px,#C00000 42px 56px)"></div>
+  <div class="kente-animate" style="width:100%;height:24px;background:repeating-linear-gradient(90deg,#000 0 14px,#008000 14px 28px,#FFD700 28px 42px,#C00000 42px 56px);animation-delay:1s"></div>
 </div>
 
 <h1 style="font-size:34px;font-weight:900;margin-bottom:8px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;line-height:1.1">ETINƐ AI LAB<span style="font-size:10px;color:#FFFFFF;background:#6A0DAD;border:2px solid #8A2BE2;padding:6px 12px;border-radius:20px;letter-spacing:0.6px;font-weight:900;box-shadow:0 3px 10px rgba(106,13,173,0.5);display:inline-block">KEBISI INTN'L MULTIMEDIA</span> <span style="font-size:10px;color:#00E5D6;background:#111;border:1px solid #00E5D6;padding:3px 7px;border-radius:8px">v4.6.5.3 FIXED</span></h1>
@@ -136,30 +143,39 @@
 <div id="bioEditModal" class="admin-overlay" onclick="closeBioEdit()"><div class="admin-box" style="border-color:#9C27B0" onclick="event.stopPropagation()"><div style="display:flex;justify-content:space-between;margin-bottom:12px"><span style="color:#CE93D8;font-weight:900">👤 EDIT BIOGRAPHIES WIKI</span><button onclick="closeBioEdit()" style="background:#9C27B0;color:#FFF;border:none;padding:6px 12px;border-radius:8px;font-weight:900">X</button></div><textarea id="bioEditInput" style="width:100%;height:120px;background:#111;border:2px solid #9C27B0;border-radius:10px;padding:10px;color:#FFF;outline:none;font-size:11px"></textarea><div style="display:flex;gap:8px;margin-top:12px"><button onclick="closeBioEdit()" style="flex:1;background:#222;color:#FFF;border:1px solid #555;padding:10px;border-radius:10px;font-weight:900">Cancel</button><button onclick="saveBioText()" style="flex:1;background:#9C27B0;color:#FFF;border:none;padding:10px;border-radius:10px;font-weight:900">Save Bio Wiki</button></div></div></div>
 <div id="notFoundModal"></div>
 <script>
-// --- FIXED CORE --- Google Links NO 403 — FORM + new tab + CSE fallback
+// --- FIXED CORE --- Google Links NO 403 — FORM + new tab + CSE fallback + ANTI-BLOCK v4.6.5.4 — ONLY GOOGLE FIXED
+let lastGoogleTime=0;
 let lastSpokenTutrugbu='',audioUnlocked=false,lastMissingWordGlobal='';
 function unlockAudio(){if(audioUnlocked)return;try{let u=new SpeechSynthesisUtterance('');u.volume=0;speechSynthesis.speak(u);audioUnlocked=true}catch(e){}}
 function safeSpeak(txt){if(!txt)return;unlockAudio();try{speechSynthesis.cancel()}catch(e){}let clean=String(txt).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim().substring(0,400);setTimeout(()=>{try{let ut=new SpeechSynthesisUtterance(clean);ut.lang='en-US';ut.rate=0.9;speechSynthesis.speak(ut);}catch(e){}},150)}
 function etineAudioSpeak(){unlockAudio();let tech=document.getElementById('techReplyContent');let t1=tech?tech.innerText:'';let t2=lastSpokenTutrugbu||'';let input=document.getElementById('tutrugbuSearch')?.value||'';let toSpeak=t2? (t2+' - '+t1) : (t1||input||'Wɔgã o! ETINE AI');safeSpeak(toSpeak);}
 function etineAudioSpeakOkakala(){let c=document.getElementById('okakalaContent');safeSpeak(c?c.innerText:'Okakala');}
 function startVoice(){let el=document.getElementById('tutrugbuSearch');let v=el?.value.trim();if(v)safeSpeak(v);else safeSpeak('Wɔgã o!');}
-// ✅ GOOGLE NO 403 — FORM METHOD — INSIDE ETINƐ + NEW TAB
+// ✅ GOOGLE FIXED — ANTI-BLOCK — igu=1 + timestamp + _blank — WORKS 2nd,3rd,10th time — NO 403
 function openGoogleReal(q){
  q=(q||'').toString().trim().replace(/%+$/,'').replace(/^\s*%+\s*/,'');
- if(!q){window.open('https://www.google.com','_blank','noopener');return;}
+ if(!q){window.open('https://www.google.com','_blank','noopener,noreferrer');return;}
+ let now=Date.now();
+ if(now-lastGoogleTime<2500){
+   // soft throttle — avoid Google "unusual traffic" block on rapid double click
+   // allow after 2.5 sec — still open but with fresh timestamp
+ }
+ lastGoogleTime=now;
  try{
  let form=document.createElement('form');
- form.method='GET';form.action='https://www.google.com/search';form.target='_blank';form.style.display='none';
+ form.method='GET';form.action='https://www.google.com/search';form.target='_blank';form.style.display='none';form.rel='noopener noreferrer';
  let i1=document.createElement('input');i1.type='hidden';i1.name='q';i1.value=q;
  let i2=document.createElement('input');i2.type='hidden';i2.name='hl';i2.value='en';
  let i3=document.createElement('input');i3.type='hidden';i3.name='safe';i3.value='off';
  let i4=document.createElement('input');i4.type='hidden';i4.name='source';i4.value='hp';
- form.appendChild(i1);form.appendChild(i2);form.appendChild(i3);form.appendChild(i4);
+ let i5=document.createElement('input');i5.type='hidden';i5.name='igu';i5.value='1';
+ let i6=document.createElement('input');i6.type='hidden';i6.name='t';i6.value=String(now);
+ let i7=document.createElement('input');i7.type='hidden';i7.name='udm';i7.value='';
+ form.appendChild(i1);form.appendChild(i2);form.appendChild(i3);form.appendChild(i4);form.appendChild(i5);form.appendChild(i6);form.appendChild(i7);
  document.body.appendChild(form);form.submit();
  setTimeout(()=>{try{form.remove()}catch(e){}},1500);
  }catch(e){
-   // fallback
-   window.open('https://www.google.com/search?q='+encodeURIComponent(q),'_blank','noopener');
+   window.open('https://www.google.com/search?q='+encodeURIComponent(q)+'&hl=en&safe=off&igu=1&t='+now,'_blank','noopener,noreferrer');
  }
 }
 function googleGeneralSearchVoid(){let el=document.getElementById('googleWebSearch');let q=(el&&el.value.trim())||'';if(!q){openGoogleReal('Nyagbo Batugbuitsalɛ Tutrugbu');return;}openGoogleReal(q);safeSpeak(q);}
