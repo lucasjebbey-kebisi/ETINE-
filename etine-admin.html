@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ETINE ADMIN - HIDDEN MIC - My Father</title>
+<style>html{visibility:hidden}*{box-sizing:border-box;margin:0;padding:0}body{background:#0A0A0A;color:#FFF;font-family:system-ui;padding:14px;display:flex;flex-direction:column;align-items:center}.card{width:100%;max-width:520px;background:#000;border:2.5px solid #00E5D6;border-radius:18px;padding:14px;margin:10px 0}.btn{width:100%;padding:14px;border-radius:12px;font-weight:900;border:none;cursor:pointer;margin-top:8px}.btn-del{background:linear-gradient(180deg,#FF3B3B,#CC0000);color:#FFF}.btn-teal{background:linear-gradient(180deg,#00E5D6,#00C7B7);color:#000}.btn-gold{background:linear-gradient(180deg,#FFD700,#FFA500);color:#000}.tab-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:10px 0;max-width:520px;width:100%}.tab-btn{background:#111;border:2px solid #00C7B7;color:#00C7B7;border-radius:12px;padding:10px;font-weight:900;font-size:11px;cursor:pointer}.tab-btn.active{background:#00E5D6;color:#000}.tab-content{display:none;width:100%;max-width:520px}.tab-content.active{display:block}input,textarea{width:100%;background:#111;border:1.5px solid #00C7B7;border-radius:12px;padding:12px;color:#00FFE0;font-weight:800;margin:6px 0}textarea{min-height:180px}.list-item{display:flex;justify-content:space-between;align-items:center;background:#111;border:1px solid #222;border-radius:12px;padding:10px;margin:5px 0}
+#micSecretBox{display:none;border-color:#FF00FF!important;background:#1A001A}
+</style>
+<script>
+const ADMIN_PASS="KebisiNASA2022!Nyagbo";
+(function(){
+  const saved=sessionStorage.getItem('etine_admin_auth');
+  if(saved===ADMIN_PASS){document.documentElement.style.visibility='visible';return;}
+  let tries=0;
+  while(tries<3){
+    let p=prompt("🔒 ETINE ADMIN - My Father - Enter Password:\n\nBulĩ Kɛŋaŋã Bá - Admin Only");
+    if(p===null){window.location.href='tutrugbu-dictionary.html';return;}
+    if(p.trim()===ADMIN_PASS){try{sessionStorage.setItem('etine_admin_auth',ADMIN_PASS);}catch(e){}document.documentElement.style.visibility='visible';return;}
+    tries++;alert("❌ Wrong My Father - "+(3-tries)+" left");
+  }
+  window.location.href='tutrugbu-dictionary.html';
+})();
+function logoutAdmin(){sessionStorage.removeItem('etine_admin_auth');window.location.href='tutrugbu-dictionary.html';}
+let clickCount=0;
+function secretUnlockMic(){
+  clickCount++;
+  if(clickCount>=3){
+    let code=prompt("🎙️ SECRET MIC UNLOCK - My Father - Enter MIC CODE:\n\nHint: Your main password My Father");
+    if(code===ADMIN_PASS){
+      document.getElementById('micSecretBox').style.display='block';
+      alert("🎙️ Mic unlocked My Father - Only you can see this - Hidden from users");
+      clickCount=0;
+    }else{alert("❌ Wrong mic code My Father");clickCount=0;}
+  }else{
+    document.getElementById('unlockHint').innerText="🔓 Click "+(3-clickCount)+" more times on title to unlock hidden mic - My Father";
+    setTimeout(()=>{document.getElementById('unlockHint').innerText="";clickCount=0;},3000);
+  }
+}
+</script>
+</head><body>
+<h2 id="adminTitle" onclick="secretUnlockMic()" style="color:#00FFE0;cursor:pointer;user-select:none">🔧 ETINE ADMIN FULL - My Father 🔒</h2>
+<div style="color:#FFD700;font-size:10px;font-weight:900;text-align:center">Triple-click title to unlock hidden mic 🎙️ - My Father</div>
+<div id="unlockHint" style="color:#FF00FF;font-size:10px;text-align:center;height:14px"></div>
+<div style="color:#FFD700;font-size:11px;font-weight:900;text-align:center">water=Bulĩ food=Kɛŋaŋã come=Bá | My Father</div>
+
+<div class="tab-row">
+<button class="tab-btn active" id="tb1" onclick="openTab('single')">➕ SINGLE</button>
+<button class="tab-btn" id="tb2" onclick="openTab('bulk')">📦 BULK</button>
+<button class="tab-btn" id="tb3" onclick="openTab('delete')">🗑️ EDIT/DEL</button>
+</div>
+
+<!-- HIDDEN MIC BOX - My Father - Only you can unlock -->
+<div class="card" id="micSecretBox">
+<div style="color:#FF00FF;font-weight:900">🎙️ HIDDEN MIC - ONLY YOU - My Father 🔒</div>
+<div style="color:#AAA;font-size:10px;margin:4px 0">This mic is hidden from users - Only unlocked by triple-click + password - My Father</div>
+<input id="micWord" placeholder="Word to record e.g. Bulĩ - My Father">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
+<button class="btn" style="background:linear-gradient(180deg,#FF00FF,#AA00AA);color:#FFF;margin:0" onclick="startRecording()">🎙️ START RECORD</button>
+<button class="btn" style="background:#111;border:1.5px solid #FF00FF;color:#FF00FF;margin:0" onclick="stopRecording()">⏹️ STOP</button>
+</div>
+<div id="micStatus" style="color:#FF00FF;font-size:11px;margin-top:6px">🎙️ Hidden mic ready - My Father</div>
+<audio id="audioPlayback" controls style="width:100%;margin-top:8px;display:none"></audio>
+<button class="btn btn-gold" onclick="saveRecording()" style="display:none" id="saveAudioBtn">💾 SAVE AUDIO - My Father</button>
+</div>
+
+<div id="tab-single" class="tab-content active"><div class="card"><div style="color:#00FFE0;font-weight:900">➕ SINGLE ADD - My Father</div><input id="engSingle" placeholder="English e.g. water"><input id="tutSingle" placeholder="Tutrugbu e.g. Bulĩ"><input id="posSingle" placeholder="POS e.g. noun"><button class="btn btn-teal" onclick="addSingle()">✅ ADD SINGLE - My Father</button><div id="msgSingle" style="color:#00FFE0;font-size:12px;margin-top:8px"></div></div></div>
+<div id="tab-bulk" class="tab-content"><div class="card" style="border-color:#FFD700"><div style="color:#FFD700;font-weight:900">📦 BULK IMPORT - My Father</div><textarea id="bulkText" placeholder="water = Bulĩ&#10;food = Kɛŋaŋã"></textarea><button class="btn btn-gold" onclick="addBulk()">📦 IMPORT BULK - My Father</button><div id="msgBulk" style="color:#FFD700;font-size:12px;margin-top:8px"></div></div></div>
+<div id="tab-delete" class="tab-content"><div class="card"><div style="color:#00FFE0;font-weight:900">🔍 SEARCH EDIT/DELETE - My Father</div><input id="searchDel" placeholder="Search Bulĩ Kɛŋaŋã Bá" oninput="searchWord()"><div id="count" style="color:#888;font-size:11px;margin-top:6px">Loading...</div><div id="results" style="max-height:400px;overflow:auto;margin-top:8px"></div></div><div class="card" id="editCard" style="display:none;border-color:#FFD700"><div style="color:#FFD700;font-weight:900">✏️ EDIT - My Father</div><input id="editEng"><input id="editTut"><input id="editPos"><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px"><button class="btn btn-gold" onclick="saveEdit()" style="margin:0">💾 SAVE</button><button class="btn btn-del" onclick="deleteFromEdit()" style="margin:0">🗑️ DELETE</button></div></div><div class="card" style="border-color:#FFD700"><div style="color:#FFD700;font-weight:900">⚠️ DIRECT DELETE - My Father</div><input id="exactWord" placeholder="Exact word"><button class="btn btn-del" onclick="deleteExact()">🗑️ DELETE EXACT - My Father</button><div id="msg" style="color:#FFD700;font-size:12px;margin-top:8px"></div><button onclick="logoutAdmin()" style="background:#111;border:1.5px solid #FF3B3B;color:#FF3B3B;border-radius:12px;padding:10px;width:100%;margin-top:8px;font-weight:900">🔒 Logout - My Father</button></div></div>
+
+<script>
+const KEYS=['etine_tutrugbu_pure_532_corrected','etine_tutrugbu_pure_493'];
+function getDict(){for(let k of KEYS){try{let v=localStorage.getItem(k);if(v){let a=JSON.parse(v);if(a&&a.length) return a;}}catch(e){}}return[];}
+let DICT=getDict();
+function openTab(n){document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+n).classList.add('active');document.getElementById('tb'+(n=='single'?1:n=='bulk'?2:3)).classList.add('active');}
+document.getElementById('count').innerText='Loaded: '+DICT.length+' - My Father';
+function addSingle(){let eng=document.getElementById('engSingle').value.trim(),tut=document.getElementById('tutSingle').value.trim(),pos=document.getElementById('posSingle').value.trim();if(!eng||!tut)return;let ne={en:eng,tut:tut,english:eng,tutrugbu:tut,pos:pos,added:new Date().toISOString()};KEYS.forEach(k=>{try{let a=JSON.parse(localStorage.getItem(k)||'[]');a.push(ne);localStorage.setItem(k,JSON.stringify(a));}catch(e){}});DICT=getDict();document.getElementById('msgSingle').innerHTML='✅ Added '+eng+' = '+tut+' - My Father';}
+function addBulk(){let text=document.getElementById('bulkText').value.trim(),existing=new Set(DICT.map(x=>(x.en||'').toLowerCase())),newEntries=[];text.split('\n').forEach(line=>{line=line.trim();if(!line)return;let parts=line.split('=').map(s=>s.trim());if(parts.length>=2&&!existing.has(parts[0].toLowerCase())){newEntries.push({en:parts[0],tut:parts[1],english:parts[0],tutrugbu:parts[1],added:new Date().toISOString()});}});KEYS.forEach(k=>{try{let a=JSON.parse(localStorage.getItem(k)||'[]');a=a.concat(newEntries);localStorage.setItem(k,JSON.stringify(a));}catch(e){}});DICT=getDict();document.getElementById('msgBulk').innerHTML='✅ Added '+newEntries.length+' - My Father';}
+function searchWord(){let q=document.getElementById('searchDel').value.trim().toLowerCase(),box=document.getElementById('results');if(!q){box.innerHTML='';return;}let f=DICT.map((x,i)=>({x,i})).filter(o=>(o.x.en&&o.x.en.toLowerCase().includes(q))||(o.x.tut&&o.x.tut.toLowerCase().includes(q)));let h='';f.slice(0,50).forEach(o=>{let d=o.x;h+=`<div class="list-item"><div><b>${d.tut}</b><br><span style="color:#888;font-size:11px">${d.en}</span></div><div style="display:flex;gap:6px"><button onclick="editOne(${o.i})" style="background:#111;border:1.5px solid #FFD700;color:#FFD700;border-radius:10px;padding:8px">EDIT</button><button onclick="deleteOne('${d.en.replace(/'/g,"\\'")}','${d.tut.replace(/'/g,"\\'")}')" style="background:#FF3B3B;color:#FFF;border:none;padding:8px 12px;border-radius:10px">DEL</button></div></div>`;});box.innerHTML=h;}
+let selectedIdx=-1,selectedOrigEn='',selectedOrigTut='';
+function editOne(idx){selectedIdx=idx;let d=DICT[idx];selectedOrigEn=d.en;selectedOrigTut=d.tut;document.getElementById('editEng').value=d.en;document.getElementById('editTut').value=d.tut;document.getElementById('editPos').value=d.pos||'';document.getElementById('editCard').style.display='block';}
+function saveEdit(){if(selectedIdx<0)return;let neEn=document.getElementById('editEng').value.trim(),neTut=document.getElementById('editTut').value.trim(),nePos=document.getElementById('editPos').value.trim();doDelete(selectedOrigEn,selectedOrigTut);let ne={en:neEn,tut:neTut,english:neEn,tutrugbu:neTut,pos:nePos,added:new Date().toISOString()};KEYS.forEach(k=>{try{let a=JSON.parse(localStorage.getItem(k)||'[]');a.push(ne);localStorage.setItem(k,JSON.stringify(a));}catch(e){}});DICT=getDict();document.getElementById('editCard').style.display='none';searchWord();}
+function deleteFromEdit(){doDelete(selectedOrigEn,selectedOrigTut);document.getElementById('editCard').style.display='none';}
+function deleteOne(en,tut){if(!confirm('DELETE? '+en+' My Father?'))return;doDelete(en,tut);}
+function deleteExact(){let w=document.getElementById('exactWord').value.trim();if(!w)return;doDelete(w,w);}
+function doDelete(en,tut){let q1=en.toLowerCase(),q2=tut.toLowerCase();KEYS.forEach(k=>{try{let a=JSON.parse(localStorage.getItem(k)||'[]');let af=a.filter(x=>{let e=(x.en||'').toLowerCase(),t=(x.tut||'').toLowerCase();return!(e===q1||t===q1||e===q2||t===q2);});localStorage.setItem(k,JSON.stringify(af));}catch(e){}});DICT=DICT.filter(x=>{let e=(x.en||'').toLowerCase(),t=(x.tut||'').toLowerCase();return!(e===q1||t===q1||e===q2||t===q2);});document.getElementById('msg').innerHTML='✅ Deleted - My Father';searchWord();}
+
+// HIDDEN MIC LOGIC - My Father - Only you
+let mediaRecorder, audioChunks=[], audioBlob;
+async function startRecording(){
+  try{
+    let stream=await navigator.mediaDevices.getUserMedia({audio:true});
+    mediaRecorder=new MediaRecorder(stream);audioChunks=[];
+    mediaRecorder.ondataavailable=e=>audioChunks.push(e.data);
+    mediaRecorder.onstop=()=>{
+      audioBlob=new Blob(audioChunks,{type:'audio/webm'});
+      let url=URL.createObjectURL(audioBlob);
+      let audio=document.getElementById('audioPlayback');
+      audio.src=url;audio.style.display='block';
+      document.getElementById('saveAudioBtn').style.display='block';
+      document.getElementById('micStatus').innerHTML="✅ Recorded - Play below - My Father";
+    };
+    mediaRecorder.start();
+    document.getElementById('micStatus').innerHTML="🔴 Recording... Speak Bulĩ Kɛŋaŋã Bá - My Father";
+  }catch(err){document.getElementById('micStatus').innerHTML="❌ Mic permission denied - My Father";}
+}
+function stopRecording(){if(mediaRecorder&&mediaRecorder.state==='recording'){mediaRecorder.stop();document.getElementById('micStatus').innerHTML="⏹️ Stopped - My Father";}}
+function saveRecording(){
+  if(!audioBlob)return;
+  let word=document.getElementById('micWord').value.trim()||"Bulĩ";
+  let url=URL.createObjectURL(audioBlob);
+  let a=document.createElement('a');a.href=url;a.download=word+"_MyFather.webm";a.click();
+  document.getElementById('micStatus').innerHTML="💾 Saved "+word+" - My Father - Upload to HF later";
+}
+</script></body></html>
